@@ -17,3 +17,137 @@ Fonts:
 - Avenir
 
 */
+
+/* Style for the body to remove default margin and set a background color */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* No background color needed since hero covers the top */
+}
+
+/* Hero section styles */
+.hero {
+    /* Set the background image to the hero image */
+    background-image: url('img/HeroImageCopilot.jpg');
+    background-size: cover; /* Make the image cover the whole section */
+    background-position: top; /* Show the top of the image, crop the bottom if needed */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    text-align: left; /* Align text to the left */
+    padding: 80px 20px 80px 20px; /* top, right, bottom, left */
+    padding-top: 110px; /* Add extra space at the top for the header */
+    min-height: 80vh; /* Use a smaller min-height so the bottom is cropped */
+    /* Now, only part of the image will show, and the bottom will be cropped if the image is taller than the hero section */
+    display: flex; /* Use flex to center content vertically */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the left side */
+    position: relative;
+    max-width: none; /* Remove max-width so the hero background fills the area */
+    /* The hero image will keep its shape and fill the section */
+}
+
+/* Hide the img tag since we use the image as a background now */
+.hero-image {
+    display: none;
+}
+
+/* Style for the main headline */
+.hero-title {
+    margin-top: 0;
+    font-size: 63px; /* Set header font size */
+    color: #fff; /* White text */
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.5); /* Add shadow for readability */
+    background: rgba(0,0,0,0.3); /* Slightly dark background for readability */
+    padding: 16px 24px; /* Space inside the box */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 400px; /* Limit width so text wraps */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Style for the subheading */
+.hero-subtitle {
+    margin-top: 15px;
+    font-size: 36px; /* Set subheader font size */
+    color: #fff; /* White text */
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5); /* Add shadow for readability */
+    background: rgba(0,0,0,0.2); /* Slightly dark background for readability */
+    padding: 12px 20px; /* Space inside the box */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 350px; /* Limit width so text wraps */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Header styles */
+.site-header {
+    width: 100%;
+    background-color: #fff; /* White background */
+    height: 90px; /* Set the header height to 90px */
+    padding: 0 24px; /* Change these numbers for more or less space on the sides */
+    box-sizing: border-box; /* Include padding in width */
+    display: flex; /* Use flex to align items */
+    align-items: center; /* Vertically center the logo */
+    justify-content: space-between; /* Space between logo and button */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04); /* Soft shadow for separation */
+    position: relative; /* Keep header on top */
+    z-index: 2;
+}
+
+/* Logo image styles */
+.header-logo {
+    width: 250px;
+    height: 600px;
+    object-fit: contain;
+}
+
+/* Call to action button styles */
+.header-cta {
+    background-color: #FFC907; /* Brand yellow */
+    color: #222; /* Dark text for contrast */
+    border: none; /* No border */
+    border-radius: 999px; /* Very rounded corners for an oblong button */
+    padding: 14px 32px; /* Space inside the button */
+    font-size: 1em; /* Button text size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.2s;
+    text-decoration: none; /* Remove underline if it's a link */
+    margin-left: 16px; /* Space between logo and button if needed */
+}
+
+.header-cta:hover {
+    background-color: #FFC907; /* Keep the same yellow on hover for consistency */
+}
+
+/* Make the hero section and text boxes responsive for different screen sizes */
+@media (max-width: 600px) {
+    .hero {
+        padding: 40px 10px 40px 10px; /* Less padding on small screens */
+        padding-top: 100px; /* Adjust for header */
+        min-height: 60vh; /* Smaller min-height on mobile */
+    }
+    .hero-title {
+        font-size: 2em; /* Smaller font size */
+        width: 90vw; /* Use most of the screen width */
+        max-width: 100%; /* Prevent overflow */
+        height: auto; /* Let height adjust to content */
+        padding: 12px 10px;
+    }
+    .hero-subtitle {
+        font-size: 1.1em; /* Smaller font size */
+        width: 85vw;
+        max-width: 100%;
+        padding: 10px 8px;
+    }
+    .header-logo {
+        width: 140px; /* Smaller logo */
+        height: auto;
+    }
+    .site-header {
+        height: 60px; /* Shorter header */
+        padding: 0 8px;
+    }
+    .header-cta {
+        padding: 10px 18px;
+        font-size: 0.95em;
+    }
+}
